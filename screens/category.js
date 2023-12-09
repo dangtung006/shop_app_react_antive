@@ -27,19 +27,26 @@ export default function Category({ }) {
             id : 4,
             name: "Quan sip",
             price: "400k"
+        },
+        {
+            id : 4,
+            name: "Quan sip",
+            price: "400k"
         }
     ]);
 
     return (
         <View style={styles.container}>
             <FlatList
+                contentContainerStyle={styles.paddingHorizontal}
                 data={products}
+                numColumns={2}
+                key={2}
                 renderItem={({ item }) => (
                     <ProductItem
                         category={item}
                     />)}
                 keyExtractor={(item) => `${item.id}`}
-                contentContainerStyle={{ paddingLeft: 16, paddingRight: 16 }}
             />
         </View>
     );
@@ -47,6 +54,6 @@ export default function Category({ }) {
 
 const styles = StyleSheet.create({
     container : {
-
+        paddingHorizontal : 8
     }
 });

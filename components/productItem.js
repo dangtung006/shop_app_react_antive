@@ -26,7 +26,12 @@ const styles = StyleSheet.create({
         shadowColor : "#000",
         shadowOpacity : 0.1,
         shadowRadius : 10,
-        shadowOffset : { width : 0, height : 0 }
+        shadowOffset : { width : 0, height : 0 },
+
+
+        flex : 1,
+        paddingTop : 8,
+        paddingHorizontal : 8
     },
     
     container : {
