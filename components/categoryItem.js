@@ -1,14 +1,12 @@
 import React from "react";
 import { View, Text, Image, StyleSheet, TouchableOpacity } from "react-native";
 
-export default function CategoryItem({ category }) {
+export default function CategoryItem({ category, onPress }) {
 
     return (
         <TouchableOpacity 
             activeOpacity={0.75}
-            onPress={()=>{
-                alert("ok")
-            }}
+            onPress={onPress}
         >
             <View style={styles.categoryContainer}>
 

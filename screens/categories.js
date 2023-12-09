@@ -2,8 +2,7 @@ import { StyleSheet, Text, View, ScrollView, FlatList } from 'react-native';
 import CategoryItem from './../components/categoryItem';
 import { useState } from 'react';
 
-export default function Categories() {
-
+export default function Categories({ navigation  }) {
     const [categories, setCategories] = useState([
         { id: 1, name: "Dung cu truot tuyet" },
         { id: 2, name: "Dung cu truot tuyet" },
@@ -17,7 +16,11 @@ export default function Categories() {
         <View style={styles.container}>
             <FlatList
                 data={categories}
-                renderItem={({ item }) => (<CategoryItem category={item} />)}
+                renderItem={({ item }) => (
+                    <CategoryItem 
+                        category={item} 
+                        onPress={()=>navigation.navigate("Category")} 
+                    />)}
                 keyExtractor={(item) => `${item.id}`}
                 contentContainerStyle={{ paddingLeft: 16, paddingRight: 16 }}
             />
