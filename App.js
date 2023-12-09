@@ -11,8 +11,18 @@ function App() {
     return (
         <NavigationContainer>
             <Stack.Navigator>
-                <Stack.Screen name="Home" component={Categories} />
-                <Stack.Screen name="Category" component={Category} />
+                <Stack.Screen 
+                    name="Home" 
+                    component={Categories} 
+                    options={{ title : 'Home'}} 
+                />
+
+                <Stack.Screen 
+                    name="Category" 
+                    component={Category} 
+                    options={({ route }) => ({ title: route.params.title })}
+                />
+
             </Stack.Navigator>
         </NavigationContainer>
     );

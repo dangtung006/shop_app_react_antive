@@ -5,11 +5,11 @@ import { useState } from 'react';
 export default function Categories({ navigation  }) {
     const [categories, setCategories] = useState([
         { id: 1, name: "Dung cu truot tuyet" },
-        { id: 2, name: "Dung cu truot tuyet" },
-        { id: 3, name: "Dung cu truot tuyet" },
-        { id: 4, name: "Dung cu truot tuyet" },
-        { id: 5, name: "Dung cu truot tuyet" },
-        { id: 6, name: "Dung cu truot tuyet" }
+        { id: 2, name: "Ung Truot tuyet" },
+        { id: 3, name: "Gay truot tuyet" },
+        { id: 4, name: "Quan ao truot tuyet" },
+        { id: 5, name: "Mu truot tuyet" },
+        { id: 6, name: "Van Truot tuyet" }
     ])
 
     return (
@@ -19,7 +19,7 @@ export default function Categories({ navigation  }) {
                 renderItem={({ item }) => (
                     <CategoryItem 
                         category={item} 
-                        onPress={()=>navigation.navigate("Category")} 
+                        onPress={()=>navigation.navigate( "Category", { title : item.name } )} 
                     />)}
                 keyExtractor={(item) => `${item.id}`}
                 contentContainerStyle={{ paddingLeft: 16, paddingRight: 16 }}
